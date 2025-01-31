@@ -114,8 +114,6 @@ if st.button("Submit"):
             st.altair_chart(chart, use_container_width=True)
         except:
             st.markdown("Estimated market value data unavailable.")
-        except Exception as e:
-            st.markdown(f"An error occurred while plotting estimated market values: {str(e)}")
 
 
         # Energy Performance
