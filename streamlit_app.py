@@ -365,8 +365,6 @@ if st.button("Submit"):
                 
         except:
             st.markdown("Market statistics data unavailable.")
-        except Exception as e:
-            st.markdown(f"An error occurred while plotting market statistics: {str(e)}")
 
         st.header("Nearby Listings")
         tab1, tab2 = st.tabs(["Completed Listings", "Sale Listings"])
@@ -434,10 +432,10 @@ if st.button("Submit"):
                     st.write("No nearby sale listings available.")
             except KeyError:
                 st.markdown("Nearby listings data unavailable.")
-            except Exception as e:
+            except:
                 st.markdown(f"An error occurred while displaying nearby listings: {str(e)}")
 
 
-    except Exception as e:
+    except:
         st.markdown(f"An error occurred: {str(e)}")
         st.markdown("Please ensure results.json exists in the same directory.")
