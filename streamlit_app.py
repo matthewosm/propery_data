@@ -286,8 +286,6 @@ if st.button("Submit"):
         except:
             st.markdown("Map data unavailable.")
 
-        except:
-            st.markdown("Map data unavailable.")
         # Market Statistics Section
         st.header("Market Statistics")
 
