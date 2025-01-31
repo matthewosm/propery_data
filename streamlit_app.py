@@ -56,7 +56,7 @@ if st.button("Submit"):
                 st.markdown(f"**Outdoor Space:** {data['data']['attributes']['outdoor_space']['outdoor_space_area_square_metres']} sqm")
                 st.markdown(f"**Number of Bedrooms:** {data['data']['attributes']['number_of_bedrooms']['value']}")
                 st.markdown(f"**Number of Bathrooms:** {data['data']['attributes']['number_of_bathrooms']['value']}")
-            except :
+            except:
                 st.markdown("Detailed property measurements unavailable.")
 
         # Transactions Section
@@ -73,7 +73,7 @@ if st.button("Submit"):
                     st.markdown(f"**Transaction ID:** {data['data']['attributes']['transactions'][0]['transaction_id']}")
             else:
                 st.markdown("No transaction history available.")
-        except :
+        except:
             st.markdown("Transaction details unavailable.")
 
         # Estimated Values Line Chart with Y-axis starting at the minimum value
