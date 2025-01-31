@@ -46,7 +46,7 @@ if st.button("Submit"):
                 st.markdown(f"**Year Built:** {data['data']['attributes']['year_built']['value']}")
                 st.markdown(f"**Council Tax:** {data['data']['attributes']['council_tax']['band']} - £{data['data']['attributes']['council_tax']['current_annual_charge']}")
                 st.markdown(f"**Deeds:** {data['data']['attributes']['title_deeds']['titles'][0]['class_of_title']}")
-            except KeyError as e:
+            except:
                 st.markdown("Property details unavailable.")
 
         with col2:
@@ -56,7 +56,7 @@ if st.button("Submit"):
                 st.markdown(f"**Outdoor Space:** {data['data']['attributes']['outdoor_space']['outdoor_space_area_square_metres']} sqm")
                 st.markdown(f"**Number of Bedrooms:** {data['data']['attributes']['number_of_bedrooms']['value']}")
                 st.markdown(f"**Number of Bathrooms:** {data['data']['attributes']['number_of_bathrooms']['value']}")
-            except KeyError as e:
+            except :
                 st.markdown("Detailed property measurements unavailable.")
 
         # Transactions Section
@@ -73,7 +73,7 @@ if st.button("Submit"):
                     st.markdown(f"**Transaction ID:** {data['data']['attributes']['transactions'][0]['transaction_id']}")
             else:
                 st.markdown("No transaction history available.")
-        except KeyError as e:
+        except :
             st.markdown("Transaction details unavailable.")
 
         # Estimated Values Line Chart with Y-axis starting at the minimum value
@@ -112,7 +112,7 @@ if st.button("Submit"):
             ).interactive()  # Enable zooming and panning
             
             st.altair_chart(chart, use_container_width=True)
-        except KeyError as e:
+        except:
             st.markdown("Estimated market value data unavailable.")
         except Exception as e:
             st.markdown(f"An error occurred while plotting estimated market values: {str(e)}")
@@ -145,7 +145,7 @@ if st.button("Submit"):
             with col2:
                 st.subheader("Annual Yield")
                 st.markdown(f"**Annual Rental Yield:** {data['data']['attributes']['estimated_rental_value']['estimated_annual_rental_yield']}%")
-        except KeyError as e:
+        except:
             st.markdown("Property value estimates unavailable.")
 
         # Map Section
@@ -285,10 +285,10 @@ if st.button("Submit"):
             # Render the map with the schools and house location included
             st.pydeck_chart(r)
 
-        except KeyError as e:
+        except:
             st.markdown("Map data unavailable.")
 
-        except KeyError as e:
+        except:
             st.markdown("Map data unavailable.")
         # Market Statistics Section
         st.header("Market Statistics")
@@ -367,7 +367,7 @@ if st.button("Submit"):
                 
                 st.altair_chart(bar_chart, use_container_width=True)
                 
-        except KeyError as e:
+        except:
             st.markdown("Market statistics data unavailable.")
         except Exception as e:
             st.markdown(f"An error occurred while plotting market statistics: {str(e)}")
