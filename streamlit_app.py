@@ -423,7 +423,7 @@ if st.button("Submit"):
                             main_image_url = listing.get('main_image_url', None)
 
                             if main_image_url:
-                                st.image(main_image_url, use_column_width='always')
+                                st.image(main_image_url, use_container_width='always')
                             else:
                                 st.write("No image available")
 
